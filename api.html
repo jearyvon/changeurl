@@ -1,0 +1,121 @@
+<html>
+	<head>
+		<title>旋风转换器|迅雷链接转换|快车链接|各种连接|API</title>
+	<meta charset="utf-8">
+	<meta name="description" content="可以快速转换的链接,旋风转换器,迅雷链接转换,快车链接,各种连接">
+	<meta name="keywords" content="旋风转换器,迅雷链接转换,快车链接,各种连接,Bootstrap,CSS,CSS框架,CSS framework,javascript,bootcss,bootstrap开发,bootstrap代码,bootstrap入门">
+		<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+</html>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    
+      <a class="navbar-brand" href="#bottom">链接转换API使用</a>
+
+    </div>
+   </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="row" style="margin:0 auto;">
+
+  <div class="col-sm-12 col-md-12 center-block"  >
+  	
+ <div class="col-sm-12"  >
+ <div class="panel panel-default" >
+  <div class="panel-body">
+  <h2>支持：旋风（qqdl://），迅雷（thunder://）<br>快车(flashget://)，和普通地址（http,https,ftp,ftps）</h2>
+  <br>
+  <hr>
+  <div class="col-sm-3">
+  <ul class="list-group">
+ <a class="list-group-item active" href="index.php">返回主页</a>
+  <a class="list-group-item" href="#intro">食用说明</a>
+  <a  class="list-group-item" href="#use">食用方法</a>
+  <a class="list-group-item" target="_blank" href="http://vvwall.com/">关于我</a>
+
+</ul>
+  </div>
+  <div class="col-sm-9">
+	  <div class="panel panel-default " id="index">
+	  <div class="panel-body">
+	<div id="index" class="ppp" >
+		    <h1>地址转换啦啦啦啦啦开放API啦</h1>
+		<br>
+		<br>	
+		<br>
+		<br>
+	</div>
+	<div id="intro" style="display:none;" class="ppp">
+		<h1>食用说明</h1>
+		<p>把链接复制进去。</p>
+		<p>然后点一下就可以了</p>
+		<h3>api食用说明</h3>
+		<p>api很好用哦直接用post方式把你的链接发送过来就OK了我们会返回你一个json</p>
+		<p>你可以使用这个链接：<code>http://iitool.sinaapp.com/url/index.php</code></p>	
+		当然也可以去把代码下载到你的电脑上。
+		<p><i>本代码禁止用于商业</i></p>	
+	</div>
+
+	<div id="use"  style="display:none;" class="ppp">
+		<h1>使用方法</h1>
+		<hr>
+		<p>
+			可以使用我们给你的url调用这里我给出一些代码仅作为参考
+		</p>
+		<p><code>http://iitool.sinaapp.com/url/index.php</code></p>
+		<pre><code>
+	$url = "http://iitool.sinaapp.com/url/index.php";
+	$youurl="";//你的链接任何类型都可以的我们会自动判断
+　　$post_data = array ("url" => $youurl);
+　　$ch = curl_init();
+　　curl_setopt($ch, CURLOPT_URL, $url);
+　　curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+　　// post数据
+　　curl_setopt($ch, CURLOPT_POST, 1);
+　　// post的变量
+　　curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+　　$output = curl_exec($ch);
+　　curl_close($ch);
+　　//打印获得的数据
+　　print_r($output);//这里输出的是json
+</code></pre>
+
+<hr>
+<p>我的github项目</p>
+<p><a href=""></a></p>
+	</div>
+
+	  </div>
+	</div>
+  </div>
+
+  </div>
+	</div>
+ </div>
+
+
+  </div>
+</center>
+</div>
+<footer class="row footer-bottom">
+	<ul class="list-inline text-center">
+        <li><a href="http://weibo.com/findlike" target="_blank">Powered by JearyVon</a></li><li>welcome to <a href="http://saytoyou.sinaapp.com" target="_blank">表白密信</a></li>
+        <li><a href="./demo/loading/index.html">loadingdemo</a></li>
+        <li><a href="./index.php">返回主页</a></li>
+      </ul>
+</footer>
+<script>
+$(".list-group-item").click(function(){
+	var panel = $(this).attr('href');
+	$('.ppp').hide();
+	$(panel).show();
+	$('.active').removeClass('active');
+	$(this).addClass('active');
+
+});
+</script>
